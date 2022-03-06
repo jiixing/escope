@@ -18,5 +18,5 @@ npm-debug.log
 # JSDoc
 /out/
 
-/lib/
 /powered-test/
+.idea/
