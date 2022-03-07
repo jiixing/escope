@@ -313,7 +313,7 @@ export default class Referencer extends esrecurse.Visitor {
     visitVariableDeclaration(variableTargetScope, type, node, index, fromTDZ) {
         // If this was called to initialize a TDZ scope, this needs to make definitions, but doesn't make references.
         const decl = node.declarations[index];
-        const { init } = decl; if (init.object && init.object.name==="wo") debugger
+        const { init } = decl;
         this.visitPattern(decl.id, { processRightHandNodes: !fromTDZ }, (pattern, info) => {
             variableTargetScope.__define(pattern,
                 new Definition(
