@@ -28,7 +28,6 @@
     "url": "https://github.com/estools/escope.git"
   },
   "dependencies": {
-    "esrecurse": "^4.3.0",
     "estraverse": "^5.3.0"
   },
   "devDependencies": {

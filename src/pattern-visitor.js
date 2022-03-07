@@ -23,7 +23,7 @@
 */
 
 import { Syntax } from 'estraverse';
-import esrecurse from 'esrecurse';
+import esrecurse from './esrecurse';
 
 function getLast(xs) {
     return xs[xs.length - 1] || null;

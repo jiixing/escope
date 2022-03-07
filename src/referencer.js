@@ -22,7 +22,7 @@
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 import { Syntax } from 'estraverse';
-import esrecurse from 'esrecurse';
+import esrecurse from './esrecurse';
 import Reference from './reference.js';
 import Variable from './variable.js';
 import PatternVisitor from './pattern-visitor.js';
@@ -313,7 +313,7 @@ export default class Referencer extends esrecurse.Visitor {
     visitVariableDeclaration(variableTargetScope, type, node, index, fromTDZ) {
         // If this was called to initialize a TDZ scope, this needs to make definitions, but doesn't make references.
         const decl = node.declarations[index];
-        const { init } = decl;
+        const { init } = decl; if (init.object && init.object.name==="wo") debugger
         this.visitPattern(decl.id, { processRightHandNodes: !fromTDZ }, (pattern, info) => {
             variableTargetScope.__define(pattern,
                 new Definition(
